@@ -17,9 +17,8 @@ const CreatePost = () => {
 
   const handleSubmit = () => {};
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
   const handleSurpriseMe = () => {
     const randomPrompt = getRandomPrompt(form.prompt);
@@ -65,18 +64,19 @@ const CreatePost = () => {
             labelName="Your Name"
             type="text"
             name="name"
-            placeholder="John Doe"
+            placeholder="Ex., john doe"
             value={form.name}
             handleChange={handleChange}
           />
+
           <FormField
             labelName="Prompt"
             type="text"
-            name="name"
-            placeholder="a stained glass window depicting a hamburger and french fries"
+            name="prompt"
+            placeholder="An Impressionist oil painting of sunflowers in a purple vase…"
             value={form.prompt}
             handleChange={handleChange}
-            isSupriseMe
+            isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
           />
           <div className="relative  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-flue-500 w-64 p-3 h-64 flex justify-center items-center">
